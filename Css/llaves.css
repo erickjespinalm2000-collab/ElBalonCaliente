@@ -1,0 +1,136 @@
+/* =====================================================================
+   El organigrama de cruces.
+
+   Cada ronda es una columna. Dentro de la columna los partidos se
+   reparten el alto disponible, asi que un partido de semifinal queda
+   centrado frente a los dos de cuartos que lo alimentan, que es lo que
+   da la forma de arbol tipica de estos cuadros.
+   ===================================================================== */
+
+.cuadro-scroll {
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.cuadro {
+    display: flex;
+    gap: 26px;
+    align-items: stretch;
+    min-height: 260px;
+    padding: 6px 2px;
+}
+
+.ronda {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 14px;
+    min-width: 215px;
+}
+
+.ronda-titulo {
+    color: #8fa3bf;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.partido {
+    background-color: #0f1c2e;
+    border: 1px solid #33445e;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.partido-resuelto { border-color: #2c6b39; }
+
+/* La linea que une cada partido con el de la ronda siguiente */
+.ronda:not(:last-child) .partido::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -26px;
+    width: 26px;
+    height: 1px;
+    background-color: #33445e;
+}
+
+.lado {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 11px;
+    color: #c9d6e8;
+    font-size: 0.85rem;
+}
+
+.lado + .lado { border-top: 1px solid #263349; }
+
+.lado-nombre {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lado-gana {
+    color: #8dffa3;
+    font-weight: 600;
+    background-color: #16281c;
+}
+
+.lado-pierde {
+    color: #63748d;
+    text-decoration: line-through;
+}
+
+.escudo-llave {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex: 0 0 20px;
+}
+
+.escudo-vacio {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #1b263b;
+    border: 1px dashed #33445e;
+    flex: 0 0 20px;
+}
+
+.btn-gana {
+    color: #ff6b35;
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border: 1px solid #ff6b35;
+    border-radius: 999px;
+    padding: 1px 8px;
+    flex: 0 0 auto;
+}
+
+.btn-gana:hover {
+    background-color: #ff6b35;
+    color: #ffffff;
+}
+
+.ronda-campeon { justify-content: center; min-width: 190px; }
+
+.partido-campeon {
+    border-color: #ff6b35;
+    background-color: #241a14;
+}
+
+.partido-campeon .lado-gana {
+    background-color: transparent;
+    color: #ffb199;
+    font-size: 0.95rem;
+    justify-content: center;
+}

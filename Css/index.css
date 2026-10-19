@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 60%, #0d1b2a 100%);
+}
+
+.login-contenedor {
+    background-color: #1b263b;
+    border: 1px solid #2f3e57;
+    border-radius: 14px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.login-contenedor h1 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.login-contenedor .subtitulo {
+    color: #8fa3bf;
+    text-align: center;
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    color: #c9d6e8;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #33445e;
+    background-color: #0f1c2e;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.campo input:focus {
+    border-color: #ff6b35;
+}
+
+.btn-ingresar {
+    width: 100%;
+    padding: 13px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6b35;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-ingresar:hover {
+    background-color: #e85a29;
+}
+
+.mensaje-error {
+    background-color: #3b1f26;
+    color: #ff8a8a;
+    border: 1px solid #6b2c34;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.mensaje-exito {
+    background-color: #1f3b26;
+    color: #8dffa3;
+    border: 1px solid #2c6b39;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.link-registro {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 0.85rem;
+    color: #c9d6e8;
+}
+
+.link-registro a {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-registro a:hover {
+    text-decoration: underline;
+}
+
+.pie-login {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 0.8rem;
+    color: #7c8ba3;
+}   
+
+.logo-login {
+    display: block;
+    width: 270px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 8px;
+}
+/* =====================================================================
+   Correccion: radios y casillas dentro de un .campo
+
+   Dos reglas genericas de este mismo archivo les ganaban por ser mas
+   especificas y los rompian:
+
+     .campo input { width: 100% }   estiraba el circulo del radio a todo
+                                    el ancho del formulario
+     .campo label { display: block } tiraba el texto debajo del control
+                                    en lugar de dejarlo al lado
+
+   Un selector como .opcion-radio (0-1-0) pierde contra .campo label
+   (0-1-1), asi que no bastaba con declararlo despues: habia que subir la
+   especificidad. Eso es lo que hacen estas dos reglas.
+   ===================================================================== */
+
+.campo input[type="radio"],
+.campo input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    min-width: 0;
+    flex: 0 0 16px;
+    margin: 0;
+    padding: 0;
+    accent-color: #ff6b35;
+}
+
+.campo label.opcion-radio,
+.campo label.opcion-checkbox,
+.campo label.opcion,
+.campo label.casilla-hora,
+.campo label.casilla-sede {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c9d6e8;
+    font-size: 0.86rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    cursor: pointer;
+}

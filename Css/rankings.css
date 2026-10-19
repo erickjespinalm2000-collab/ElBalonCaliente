@@ -1,0 +1,422 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 60%, #0d1b2a 100%);
+}
+
+.rankings-contenedor {
+    background-color: #1b263b;
+    border: 1px solid #2f3e57;
+    border-radius: 14px;
+    padding: 36px 40px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.volver {
+    display: inline-block;
+    color: #8fa3bf;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+}
+
+.volver:hover {
+    color: #ff6b35;
+}
+
+.rankings-contenedor h1 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
+.rankings-contenedor h2 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-top: 32px;
+    margin-bottom: 14px;
+}
+
+.subtitulo {
+    color: #8fa3bf;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+}
+
+.mensaje-error {
+    background-color: #3b1f26;
+    color: #ff8a8a;
+    border: 1px solid #6b2c34;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.mensaje-exito {
+    background-color: #1f3b26;
+    color: #8dffa3;
+    border: 1px solid #2c6b39;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.form-rankings {
+    background-color: #0f1c2e;
+    border: 1px solid #33445e;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+.campo:last-of-type {
+    margin-bottom: 0;
+}
+
+.campo label {
+    display: block;
+    color: #c9d6e8;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 8px;
+    border: 1px solid #33445e;
+    background-color: #1b263b;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: #ff6b35;
+}
+
+.campo-doble {
+    display: flex;
+    gap: 14px;
+}
+
+.campo-doble .campo {
+    flex: 1;
+}
+
+.btn-agregar {
+    margin-top: 16px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6b35;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-agregar:hover {
+    background-color: #e85a29;
+}
+
+.vacio {
+    color: #7c8ba3;
+    font-size: 0.85rem;
+}
+
+.vacio a {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.vacio a:hover {
+    text-decoration: underline;
+}
+
+.tabla-rankings {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-rankings th {
+    text-align: left;
+    color: #8fa3bf;
+    font-size: 0.8rem;
+    padding: 10px 12px;
+    border-bottom: 1px solid #33445e;
+}
+
+.tabla-rankings td {
+    padding: 12px;
+    color: #c9d6e8;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #263349;
+}
+
+.btn-eliminar {
+    color: #ff8a8a;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-eliminar:hover {
+    text-decoration: underline;
+}
+
+.campo input[type="datetime-local"] {
+    color-scheme: dark;
+}
+
+.campo input[type="number"] {
+    color-scheme: dark;
+}
+
+.tabla-rankings strong {
+    color: #ff6b35;
+    margin: 0 4px;
+}
+
+.tabla-rankings .detalle {
+    color: #7c8ba3;
+    font-size: 0.8rem;
+}
+
+.rankings-contenedor h2 {
+    margin-top: 30px;
+}
+
+.resumen {
+    color: #8fa3bf;
+    font-size: 0.85rem;
+    margin-top: 16px;
+}
+
+.resumen strong {
+    color: #ffffff;
+}
+
+.tabla-scroll {
+    overflow-x: auto;
+    border: 1px solid #263349;
+    border-radius: 10px;
+}
+
+.tabla-rankings th,
+.tabla-rankings td {
+    text-align: center;
+}
+
+.tabla-rankings th:nth-child(2),
+.tabla-rankings td.equipo {
+    text-align: left;
+}
+
+.tabla-rankings td.pos {
+    color: #8fa3bf;
+    font-weight: 600;
+}
+
+.tabla-rankings tbody tr:first-child td.pos {
+    color: #ff6b35;
+}
+
+.tabla-rankings td.equipo {
+    white-space: nowrap;
+}
+
+/* El escudo va en una caja de tamaño fijo. Sin esto la imagen se dibuja a su
+   tamaño real (hay logos de 7500 px de ancho) y revienta la tabla. La caja
+   existe aunque el equipo no tenga logo, así los nombres quedan alineados. */
+.tabla-rankings .celda-equipo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabla-rankings .escudo {
+    flex: 0 0 26px;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background-color: #16243a;
+    border: 1px solid #33445e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tabla-rankings .escudo .logo-mini {
+    width: 100%;
+    height: 100%;
+    /* "contain" y no "cover": el escudo se ve completo, sin recortarle los lados */
+    object-fit: contain;
+    display: block;
+}
+
+.tabla-rankings .escudo-vacio {
+    color: #7c8ba3;
+    font-size: 0.68rem;
+    font-weight: 700;
+}
+
+.tabla-rankings td.pts {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.ayuda {
+    color: #7c8ba3;
+    font-size: 0.8rem;
+    margin-top: 12px;
+}
+
+.rejilla-lideres {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.tarjeta-lider {
+    background-color: #0f1c2e;
+    border: 1px solid #33445e;
+    border-radius: 10px;
+    padding: 16px 18px;
+}
+
+.tarjeta-lider h3 {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.lista-lideres {
+    list-style: none;
+    counter-reset: puesto;
+}
+
+.lista-lideres li {
+    counter-increment: puesto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    border-top: 1px solid #263349;
+    color: #c9d6e8;
+    font-size: 0.88rem;
+}
+
+.lista-lideres li::before {
+    content: counter(puesto);
+    color: #ff6b35;
+    font-weight: 700;
+    min-width: 16px;
+}
+
+.lista-lideres .nombre {
+    flex: 1;
+}
+
+.lista-lideres .valor {
+    text-align: right;
+}
+
+.lista-lideres .valor strong {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.unidad {
+    display: block;
+    color: #7c8ba3;
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+
+/* Marca las estadísticas donde gana el valor más bajo (tiempos, posiciones) */
+.etiqueta-menor {
+    display: inline-block;
+    background-color: #1b263b;
+    border: 1px solid #ff6b35;
+    border-radius: 999px;
+    padding: 2px 9px;
+    margin-top: 6px;
+    color: #ffb199;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.sin-datos {
+    color: #7c8ba3;
+    font-size: 0.85rem;
+}
+/* =====================================================================
+   Correccion: radios y casillas dentro de un .campo
+
+   Dos reglas genericas de este mismo archivo les ganaban por ser mas
+   especificas y los rompian:
+
+     .campo input { width: 100% }   estiraba el circulo del radio a todo
+                                    el ancho del formulario
+     .campo label { display: block } tiraba el texto debajo del control
+                                    en lugar de dejarlo al lado
+
+   Un selector como .opcion-radio (0-1-0) pierde contra .campo label
+   (0-1-1), asi que no bastaba con declararlo despues: habia que subir la
+   especificidad. Eso es lo que hacen estas dos reglas.
+   ===================================================================== */
+
+.campo input[type="radio"],
+.campo input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    min-width: 0;
+    flex: 0 0 16px;
+    margin: 0;
+    padding: 0;
+    accent-color: #ff6b35;
+}
+
+.campo label.opcion-radio,
+.campo label.opcion-checkbox,
+.campo label.opcion,
+.campo label.casilla-hora,
+.campo label.casilla-sede {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c9d6e8;
+    font-size: 0.86rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    cursor: pointer;
+}

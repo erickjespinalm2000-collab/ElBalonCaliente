@@ -1,0 +1,22 @@
+# El Balon Caliente - reglas para los buscadores
+#
+# Se deja indexar solo lo publico. Las pantallas internas estan detras
+# del inicio de sesion y no tienen nada que un buscador pueda leer, asi
+# que pedirle que no entre ahorra rastreo y evita que aparezcan en
+# resultados paginas que nadie puede abrir.
+
+User-agent: *
+Allow: /$
+Allow: /acerca.php
+Allow: /index.php
+Allow: /Css/
+Allow: /Informacion/Logo.png
+
+Disallow: /Formularios/
+Disallow: /Php/
+Disallow: /Pruebas/
+Disallow: /Informacion/
+Disallow: /Logos/
+Disallow: /Js/
+
+Sitemap: https://CAMBIAR-POR-TU-DOMINIO/sitemap.xml

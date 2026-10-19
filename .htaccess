@@ -1,0 +1,95 @@
+# =====================================================================
+#  El Balon Caliente - configuracion del servidor web
+#
+#  Este archivo solo surte efecto en el hospedaje (Apache con AllowOverride).
+#  En XAMPP local es inofensivo: la regla de HTTPS no se activa porque
+#  localhost no usa HTTPS.
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+# 1. Forzar HTTPS
+#    Sin esto, la contrasena del usuario viaja en texto plano.
+# ---------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Solo redirige si la peticion NO viene ya por HTTPS.
+    # La segunda condicion cubre los hospedajes que terminan el
+    # certificado en un balanceador y avisan con esta cabecera.
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteCond %{HTTP_HOST} !^localhost [NC]
+    RewriteCond %{HTTP_HOST} !^127\.0\.0\.1 [NC]
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+
+# ---------------------------------------------------------------------
+# 2. Impedir que se liste el contenido de las carpetas
+#    Sin esto, entrar a /Logos/ muestra todos los archivos.
+# ---------------------------------------------------------------------
+Options -Indexes
+
+
+# ---------------------------------------------------------------------
+# 3. Bloquear archivos que nunca deben descargarse
+# ---------------------------------------------------------------------
+<FilesMatch "\.(sql|md|psd|vsdx|log|ini|bak)$">
+    Require all denied
+</FilesMatch>
+
+# La configuracion con las credenciales de la base
+<Files "config.php">
+    Require all denied
+</Files>
+
+
+# ---------------------------------------------------------------------
+# 4. Las pruebas no van en un servidor publico
+# ---------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^Pruebas/ - [F,L]
+</IfModule>
+
+
+# ---------------------------------------------------------------------
+# 5. Cabeceras de seguridad
+# ---------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # Evita que el navegador adivine el tipo de archivo
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Impide que el sitio se incruste en un marco ajeno
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # No filtrar la direccion completa al salir hacia otro sitio
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Ocultar la version de PHP
+    Header unset X-Powered-By
+</IfModule>
+
+
+# ---------------------------------------------------------------------
+# 6. Pagina de inicio
+# ---------------------------------------------------------------------
+DirectoryIndex index.php
+
+
+# ---------------------------------------------------------------------
+# 7. Compresion y cache de los archivos que no cambian
+#    Mejora la velocidad, que es uno de los factores que Google mide.
+# ---------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+</IfModule>

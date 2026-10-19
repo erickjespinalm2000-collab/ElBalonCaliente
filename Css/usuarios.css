@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 60%, #0d1b2a 100%);
+}
+
+.login-contenedor {
+    background-color: #1b263b;
+    border: 1px solid #2f3e57;
+    border-radius: 14px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.login-contenedor h1 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.login-contenedor .subtitulo {
+    color: #8fa3bf;
+    text-align: center;
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    color: #c9d6e8;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #33445e;
+    background-color: #0f1c2e;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.campo input:focus {
+    border-color: #ff6b35;
+}
+
+.btn-ingresar {
+    width: 100%;
+    padding: 13px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6b35;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-ingresar:hover {
+    background-color: #e85a29;
+}
+
+.mensaje-error {
+    background-color: #3b1f26;
+    color: #ff8a8a;
+    border: 1px solid #6b2c34;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.link-registro {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 0.85rem;
+    color: #c9d6e8;
+}
+
+.link-registro a {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-registro a:hover {
+    text-decoration: underline;
+}
+
+.logo-registro {
+    display: block;
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 10px;
+}
+
+.campo-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.sugerencia {
+    margin-top: 6px;
+    color: #8fa3bf;
+    font-size: 0.8rem;
+}
+
+.chip-sugerencia {
+    background-color: rgba(255, 107, 53, 0.14);
+    border: 1px solid #ff6b35;
+    border-radius: 999px;
+    color: #ff6b35;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+.chip-sugerencia:hover {
+    background-color: #ff6b35;
+    color: #ffffff;
+}
+
+.estado-usuario {
+    min-height: 1.1em;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #8fa3bf;
+}
+
+.estado-usuario.ok {
+    color: #8dffa3;
+}
+
+.estado-usuario.no {
+    color: #ff8a8a;
+}
+
+.sugerencias {
+    margin-top: 8px;
+}
+
+.sugerencias-titulo {
+    display: block;
+    margin-bottom: 6px;
+    color: #8fa3bf;
+    font-size: 0.8rem;
+}
+
+.sugerencias-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+/* =====================================================================
+   Correccion: radios y casillas dentro de un .campo
+
+   Dos reglas genericas de este mismo archivo les ganaban por ser mas
+   especificas y los rompian:
+
+     .campo input { width: 100% }   estiraba el circulo del radio a todo
+                                    el ancho del formulario
+     .campo label { display: block } tiraba el texto debajo del control
+                                    en lugar de dejarlo al lado
+
+   Un selector como .opcion-radio (0-1-0) pierde contra .campo label
+   (0-1-1), asi que no bastaba con declararlo despues: habia que subir la
+   especificidad. Eso es lo que hacen estas dos reglas.
+   ===================================================================== */
+
+.campo input[type="radio"],
+.campo input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    min-width: 0;
+    flex: 0 0 16px;
+    margin: 0;
+    padding: 0;
+    accent-color: #ff6b35;
+}
+
+.campo label.opcion-radio,
+.campo label.opcion-checkbox,
+.campo label.opcion,
+.campo label.casilla-hora,
+.campo label.casilla-sede {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c9d6e8;
+    font-size: 0.86rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    cursor: pointer;
+}

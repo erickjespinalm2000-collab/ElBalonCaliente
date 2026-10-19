@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 60%, #0d1b2a 100%);
+}
+
+.estadisticas-contenedor {
+    background-color: #1b263b;
+    border: 1px solid #2f3e57;
+    border-radius: 14px;
+    padding: 36px 40px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.volver {
+    display: inline-block;
+    color: #8fa3bf;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+}
+
+.volver:hover {
+    color: #ff6b35;
+}
+
+.estadisticas-contenedor h1 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
+.estadisticas-contenedor h2 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-top: 32px;
+    margin-bottom: 14px;
+}
+
+.subtitulo {
+    color: #8fa3bf;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+}
+
+.mensaje-error {
+    background-color: #3b1f26;
+    color: #ff8a8a;
+    border: 1px solid #6b2c34;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.mensaje-exito {
+    background-color: #1f3b26;
+    color: #8dffa3;
+    border: 1px solid #2c6b39;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.form-estadisticas {
+    background-color: #0f1c2e;
+    border: 1px solid #33445e;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+.campo:last-of-type {
+    margin-bottom: 0;
+}
+
+.campo label {
+    display: block;
+    color: #c9d6e8;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 8px;
+    border: 1px solid #33445e;
+    background-color: #1b263b;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: #ff6b35;
+}
+
+.campo-doble {
+    display: flex;
+    gap: 14px;
+}
+
+.campo-doble .campo {
+    flex: 1;
+}
+
+.btn-agregar {
+    margin-top: 16px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6b35;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-agregar:hover {
+    background-color: #e85a29;
+}
+
+.vacio {
+    color: #7c8ba3;
+    font-size: 0.85rem;
+}
+
+.vacio a {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.vacio a:hover {
+    text-decoration: underline;
+}
+
+.tabla-estadisticas {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-estadisticas th {
+    text-align: left;
+    color: #8fa3bf;
+    font-size: 0.8rem;
+    padding: 10px 12px;
+    border-bottom: 1px solid #33445e;
+}
+
+.tabla-estadisticas td {
+    padding: 12px;
+    color: #c9d6e8;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #263349;
+}
+
+.btn-eliminar {
+    color: #ff8a8a;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-eliminar:hover {
+    text-decoration: underline;
+}
+
+.campo input[type="datetime-local"] {
+    color-scheme: dark;
+}
+
+.campo input[type="number"] {
+    color-scheme: dark;
+}
+
+.tabla-estadisticas strong {
+    color: #ff6b35;
+    margin: 0 4px;
+}
+
+.tabla-estadisticas .detalle {
+    color: #7c8ba3;
+    font-size: 0.8rem;
+}
+
+
+.estadisticas-contenedor h2 {
+    margin-top: 28px;
+    margin-bottom: 4px;
+}
+
+.marcador {
+    color: #ff6b35;
+    margin: 0 6px;
+}
+
+.detalle-evento {
+    color: #8fa3bf;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+}
+
+.tabla-scroll {
+    overflow-x: auto;
+    border: 1px solid #263349;
+    border-radius: 10px;
+}
+
+.tabla-estadisticas input[type="number"] {
+    width: 90px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #33445e;
+    background-color: #0f1c2e;
+    color: #ffffff;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.tabla-estadisticas input[type="number"]:focus {
+    border-color: #ff6b35;
+}
+
+.unidad {
+    display: block;
+    color: #7c8ba3;
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+
+.ayuda {
+    color: #7c8ba3;
+    font-size: 0.8rem;
+    margin-top: 12px;
+}
+/* ---- Barra de filtros compartida ---- */
+
+.barra-filtros {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+    background-color: #162032;
+    border: 1px solid #27354c;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+}
+
+.barra-filtros .filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1 1 200px;
+    min-width: 170px;
+}
+
+.barra-filtros label {
+    color: #8fa3bf;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.barra-filtros select {
+    background-color: #1b263b;
+    border: 1px solid #33445e;
+    border-radius: 6px;
+    padding: 9px 11px;
+    color: #e4ecf7;
+    font-size: 0.88rem;
+    outline: none;
+}
+
+.barra-filtros select:focus { border-color: #ff6b35; }
+
+.btn-limpiar-filtro {
+    color: #ff6b35;
+    font-size: 0.82rem;
+    text-decoration: none;
+    white-space: nowrap;
+    padding-bottom: 10px;
+}
+
+.btn-limpiar-filtro:hover { text-decoration: underline; }
+
+.conteo-filtro {
+    color: #7c8ba3;
+    font-size: 0.8rem;
+    margin-bottom: 14px;
+}
+/* =====================================================================
+   Correccion: radios y casillas dentro de un .campo
+
+   Dos reglas genericas de este mismo archivo les ganaban por ser mas
+   especificas y los rompian:
+
+     .campo input { width: 100% }   estiraba el circulo del radio a todo
+                                    el ancho del formulario
+     .campo label { display: block } tiraba el texto debajo del control
+                                    en lugar de dejarlo al lado
+
+   Un selector como .opcion-radio (0-1-0) pierde contra .campo label
+   (0-1-1), asi que no bastaba con declararlo despues: habia que subir la
+   especificidad. Eso es lo que hacen estas dos reglas.
+   ===================================================================== */
+
+.campo input[type="radio"],
+.campo input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    min-width: 0;
+    flex: 0 0 16px;
+    margin: 0;
+    padding: 0;
+    accent-color: #ff6b35;
+}
+
+.campo label.opcion-radio,
+.campo label.opcion-checkbox,
+.campo label.opcion,
+.campo label.casilla-hora,
+.campo label.casilla-sede {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c9d6e8;
+    font-size: 0.86rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    cursor: pointer;
+}

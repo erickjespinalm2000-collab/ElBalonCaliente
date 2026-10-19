@@ -1,0 +1,447 @@
+/* ===========================================================================
+   El Balón Caliente - Pantalla de inicio
+   Paleta: fondo azul noche, acento naranja. La misma del resto del sistema.
+   =========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(1100px 520px at 15% -10%, rgba(255, 107, 53, 0.10), transparent 60%),
+        linear-gradient(135deg, #0d1b2a 0%, #16233a 55%, #0d1b2a 100%);
+    background-attachment: fixed;
+    padding: 24px 20px 40px;
+}
+
+.app {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* ---- Barra superior ---- */
+
+.barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    background-color: rgba(27, 38, 59, 0.9);
+    border: 1px solid #2f3e57;
+    border-radius: 14px;
+    padding: 14px 20px;
+    margin-bottom: 22px;
+}
+
+.barra-marca {
+    display: block;
+    line-height: 0;
+}
+
+.barra-marca img {
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+}
+
+.barra-derecha {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.usuario-nombre {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.usuario-rol {
+    background-color: #0f1c2e;
+    border: 1px solid #33445e;
+    border-radius: 999px;
+    padding: 3px 10px;
+    color: #8fa3bf;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.btn-salir {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid #ff6b35;
+    border-radius: 8px;
+    padding: 8px 14px;
+    color: #ff6b35;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.btn-salir:hover {
+    background-color: #ff6b35;
+    color: #ffffff;
+}
+
+.icono {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+}
+
+.mensaje-error {
+    background-color: #3b1f26;
+    color: #ff8a8a;
+    border: 1px solid #6b2c34;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 0.86rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+/* ---- Portada con el resumen ---- */
+
+.portada {
+    background-color: #1b263b;
+    border: 1px solid #2f3e57;
+    border-radius: 16px;
+    padding: 28px 30px;
+    margin-bottom: 26px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.saludo {
+    color: #ff9b73;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+}
+
+.portada h1 {
+    color: #ffffff;
+    font-size: 1.7rem;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.indicador {
+    background-color: #0f1c2e;
+    border: 1px solid #33445e;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.indicador-destacado {
+    border-color: rgba(255, 107, 53, 0.55);
+    background: linear-gradient(160deg, #1d2235 0%, #0f1c2e 70%);
+}
+
+.indicador-valor {
+    color: #ffffff;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.indicador-destacado .indicador-valor {
+    color: #ffb199;
+}
+
+.indicador-rotulo {
+    color: #8fa3bf;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ultimo-evento {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    background-color: #0f1c2e;
+    border: 1px solid #33445e;
+    border-left: 3px solid #ff6b35;
+    border-radius: 10px;
+    padding: 13px 16px;
+    color: #c9d6e8;
+    font-size: 0.88rem;
+}
+
+.ultimo-evento .etiqueta {
+    color: #8fa3bf;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ultimo-evento .disciplina-icono {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.ultimo-evento strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.ultimo-evento .marcador {
+    display: inline-block;
+    background-color: #ff6b35;
+    border-radius: 6px;
+    padding: 1px 8px;
+    margin: 0 4px;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.ultimo-evento .meta {
+    color: #7c8ba3;
+    font-size: 0.8rem;
+}
+
+.ultimo-evento.sin-datos {
+    border-left-color: #33445e;
+    color: #8fa3bf;
+}
+
+.ultimo-evento a {
+    color: #ff6b35;
+}
+
+/* ---- Grupos de accesos ---- */
+
+.grupo {
+    margin-bottom: 26px;
+}
+
+.grupo-encabezado {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #2f3e57;
+}
+
+.grupo-encabezado h2 {
+    color: #ffffff;
+    font-size: 1.02rem;
+}
+
+.grupo-encabezado p {
+    color: #7c8ba3;
+    font-size: 0.8rem;
+}
+
+.tarjetas {
+    display: grid;
+    /* auto-fill y no auto-fit: así un grupo de 2 tarjetas no las estira hasta
+       ocupar toda la fila, y todas las tarjetas miden lo mismo en la pantalla. */
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 14px;
+}
+
+.tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: #1b263b;
+    border: 1px solid #2f3e57;
+    border-radius: 12px;
+    padding: 16px 18px;
+    text-decoration: none;
+    transition: border-color 0.18s ease, transform 0.18s ease, background-color 0.18s ease;
+}
+
+.tarjeta:hover {
+    border-color: #ff6b35;
+    background-color: #1f2c44;
+    transform: translateY(-2px);
+}
+
+.tarjeta-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: rgba(255, 107, 53, 0.12);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    color: #ff8f66;
+}
+
+.tarjeta:hover .tarjeta-icono {
+    background-color: rgba(255, 107, 53, 0.2);
+    color: #ffb199;
+}
+
+.tarjeta-icono .icono {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+}
+
+.tarjeta-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.tarjeta-titulo {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.tarjeta-descripcion {
+    color: #8fa3bf;
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.tarjeta-flecha {
+    margin-left: auto;
+    color: #4f5f78;
+    font-size: 1.1rem;
+    transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.tarjeta:hover .tarjeta-flecha {
+    color: #ff6b35;
+    transform: translateX(3px);
+}
+
+/* ---- Pie ---- */
+
+.pie {
+    text-align: center;
+    color: #4f5f78;
+    font-size: 0.76rem;
+    padding-top: 10px;
+}
+
+/* ---- Pantallas angostas ---- */
+
+@media (max-width: 620px) {
+    body {
+        padding: 16px 14px 30px;
+    }
+
+    .barra {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .portada {
+        padding: 22px 18px;
+    }
+
+    .portada h1 {
+        font-size: 1.4rem;
+    }
+
+    .indicador-valor {
+        font-size: 1.45rem;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---- Buscador en la barra superior ---- */
+
+.barra-busqueda {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 280px;
+    max-width: 480px;
+    background-color: #0f1c2e;
+    border: 1px solid #33445e;
+    border-radius: 999px;
+    padding: 5px 6px 5px 14px;
+    transition: border-color 0.2s ease;
+}
+
+.barra-busqueda:focus-within { border-color: #ff6b35; }
+
+.barra-lupa {
+    width: 17px;
+    height: 17px;
+    color: #8fa3bf;
+    flex: 0 0 17px;
+}
+
+.barra-busqueda input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 6px 0;
+}
+
+.barra-busqueda input::placeholder { color: #63748d; }
+
+.barra-busqueda button {
+    flex: 0 0 auto;
+    border: none;
+    border-radius: 999px;
+    background-color: #ff6b35;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.barra-busqueda button:hover { background-color: #e85a29; }
+
+/* En pantallas angostas la busqueda baja a su propia linea */
+@media (max-width: 760px) {
+    .barra-busqueda {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+    }
+}

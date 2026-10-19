@@ -1,0 +1,148 @@
+/* =====================================================================
+   Buscador de equipos y jugadores
+   ===================================================================== */
+
+.caja-busqueda {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    background-color: #0f1c2e;
+    border: 1px solid #33445e;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.caja-busqueda input[type="search"] {
+    flex: 1 1 320px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #33445e;
+    background-color: #1b263b;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.caja-busqueda input[type="search"]:focus { border-color: #ff6b35; }
+
+.caja-busqueda select {
+    flex: 0 0 auto;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #33445e;
+    background-color: #1b263b;
+    color: #e4ecf7;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.caja-busqueda .btn-agregar { margin-top: 0; }
+
+.tarjeta-resultado {
+    background-color: #0f1c2e;
+    border: 1px solid #27354c;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+}
+
+.tarjeta-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.tarjeta-cabecera > div { flex: 1 1 200px; }
+
+.res-nombre {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.res-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    color: #8fa3bf;
+    font-size: 0.8rem;
+    margin-top: 3px;
+}
+
+.res-meta strong { color: #c9d6e8; }
+
+.res-enlace {
+    color: #ff6b35;
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.res-enlace:hover { text-decoration: underline; }
+
+.escudo-res, .foto-res {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    flex: 0 0 46px;
+}
+
+.foto-res { object-fit: cover; border-radius: 50%; }
+
+.escudo-mini {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    flex: 0 0 16px;
+}
+
+.img-vacia {
+    display: inline-block;
+    border-radius: 6px;
+    background-color: #1b263b;
+    border: 1px dashed #33445e;
+}
+
+.cifras {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    gap: 8px;
+}
+
+.cifra {
+    background-color: #16213a;
+    border: 1px solid #27354c;
+    border-radius: 8px;
+    padding: 10px 11px;
+    text-align: center;
+}
+
+.cifra-destacada {
+    border-color: #ff6b35;
+    background-color: #241a14;
+}
+
+.cifra-valor {
+    display: block;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+}
+
+.cifra-destacada .cifra-valor { color: #ffb199; }
+
+.cifra-rotulo {
+    display: block;
+    color: #8fa3bf;
+    font-size: 0.72rem;
+    margin-top: 3px;
+}
+
+.cifra-unidad { display: block; color: #63748d; font-size: 0.66rem; }

@@ -1,0 +1,117 @@
+/* =====================================================================
+   Pagina publica. Misma identidad visual que el resto del sistema.
+   ===================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 60%, #0d1b2a 100%);
+    color: #c9d6e8;
+}
+
+.cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 22px 20px;
+}
+
+.marca { max-width: 100%; height: auto; }
+
+.btn-entrar {
+    display: inline-block;
+    background-color: #ff6b35;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 11px 22px;
+    border-radius: 999px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-entrar:hover { background-color: #e85a29; }
+.btn-entrar.grande { font-size: 1.05rem; padding: 15px 34px; }
+
+.pagina {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px 60px;
+}
+
+.pagina h1 {
+    color: #ffffff;
+    font-size: 2.3rem;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.pagina h2 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-top: 44px;
+    margin-bottom: 14px;
+}
+
+.pagina h3 {
+    color: #ffb199;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.pagina p { line-height: 1.75; margin-bottom: 14px; }
+
+.entrada {
+    font-size: 1.12rem;
+    color: #e4ecf7;
+    max-width: 70ch;
+}
+
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.ficha {
+    background-color: #1b263b;
+    border: 1px solid #2f3e57;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.ficha p { font-size: 0.92rem; margin-bottom: 0; color: #a9bbd4; }
+
+.pasos {
+    margin-left: 20px;
+    line-height: 1.9;
+    max-width: 70ch;
+}
+
+.pasos li { margin-bottom: 6px; }
+
+.llamado { text-align: center; margin-top: 48px; }
+
+.pie {
+    border-top: 1px solid #2f3e57;
+    text-align: center;
+    color: #63748d;
+    font-size: 0.82rem;
+    padding: 26px 20px;
+}
+
+@media (max-width: 620px) {
+    .pagina h1 { font-size: 1.8rem; }
+    .cabecera { justify-content: center; }
+}

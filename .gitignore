@@ -1,0 +1,11 @@
+/Php/config.php
+/Logos/Equipos/*
+!/Logos/Equipos/.gitkeep
+/Informacion/Diagramas.vsdx
+/Informacion/Informe Proyecto Final.docx
+/Informacion/Logo.psd
+.env
+.env.*
+!.env.example
+Thumbs.db
+Desktop.ini
