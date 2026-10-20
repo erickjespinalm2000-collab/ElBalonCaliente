@@ -20,3 +20,4 @@ No publiques `Php/config.php`: contiene la configuración específica de cada in
 ## Archivos no incluidos
 
 Por privacidad, el repositorio excluye el informe del proyecto, los diagramas editables y los archivos de diseño de `Informacion`. También excluye los logos de equipos cargados por usuarios en `Logos/Equipos`.
+"# ElBalonCaliente" 
