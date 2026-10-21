@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.php",
+      "use": "vercel-php@0.9.0"
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/Css/(.*)$",
+      "dest": "/Css/$1"
+    },
+    {
+      "src": "^/Informacion/(.*)$",
+      "dest": "/Informacion/$1"
+    },
+    {
+      "src": "^/Logos/(.*)$",
+      "dest": "/Logos/$1"
+    },
+    {
+      "src": "^/Js/(.*)$",
+      "dest": "/Js/$1"
+    },
+    {
+      "src": "^/Formularios/(.*)$",
+      "dest": "/Formularios/$1"
+    },
+    {
+      "src": "^/Php/(.*)$",
+      "dest": "/Php/$1"
+    },
+    {
+      "src": "^/acerca.php$",
+      "dest": "/acerca.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.php"
+    }
+  ]
+}
