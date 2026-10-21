@@ -1,0 +1,34 @@
+{
+  "functions": {
+    "index.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "acerca.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "Php/*.php": {
+      "runtime": "vercel-php@0.9.0"
+    },
+    "Formularios/*.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "routes": [
+    {
+      "src": "/Css/(.*)",
+      "dest": "/Css/$1"
+    },
+    {
+      "src": "/Informacion/(.*)",
+      "dest": "/Informacion/$1"
+    },
+    {
+      "src": "/Logos/(.*)",
+      "dest": "/Logos/$1"
+    },
+    {
+      "src": "/Js/(.*)",
+      "dest": "/Js/$1"
+    }
+  ]
+}
